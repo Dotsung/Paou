@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-// Material-Styles
-import { withStyles } from '@material-ui/core/styles';
 import styled from "styled-components";
 
 import AppBar from '@material-ui/core/AppBar';
@@ -13,8 +11,6 @@ import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
-
-import LockIcon from '@material-ui/icons/LockOutlined';
 
 const StyledAppBar = styled(AppBar)`
     && {
@@ -61,11 +57,10 @@ const Search = styled.div`
     border-radius: 5px;
     margin-top : 30px;
     background-color: #F2F2F2
-    & hover {
+    input:focus ~ & {
       background-color: #FAFAFA;
     }
   }
-  
 `
 
 const StyledSearchIcon = styled(SearchIcon)`
@@ -93,8 +88,10 @@ const StyledInputBase = styled(({...other})=> (
       width: '100%',
     }
 
-    & .inputInput: {{
-      width: 100;
+    & .inputInput: {
+      &&{
+        width: 400px;
+      }
     }
 `;
 
@@ -128,7 +125,7 @@ class Header extends Component {
               </StyledTypography>
               <Grow/>
               <Search>
-                <StyledSearchIcon />
+                <StyledSearchIcon/>
                 <StyledInputBase
                   placeholder="Search…"
                 />
