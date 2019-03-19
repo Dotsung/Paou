@@ -84,15 +84,16 @@ const StyledInputBase = styled(({...other})=> (
     height: 40px;
 
     & .inputRoot {
-      color: 'inherit',
-      width: '100%',
     }
 
-    & .inputInput: {
-      &&{
-        width: 400px;
-      }
+    & .inputInput {
+        width: 200px;
     }
+
+    & .inputInput:focus {
+        width: 400px;
+    }
+    
 `;
 
 const Grow = styled.div`
