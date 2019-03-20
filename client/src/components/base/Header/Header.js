@@ -91,7 +91,7 @@ const StyledInputBase = styled(({...other})=> (
     }
 
     & .inputInput:focus {
-        width: 400px;
+        width: 300px;
     }
     
 `;
